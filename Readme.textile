@@ -1,0 +1,37 @@
+h3. About
+
+This plugin allows you to make automated excerpts by entering number of characters.
+Current version: 0.0.1
+Tested with 0.6.0 and 0.7.0RC.
+
+h3. Installation
+
+Like any other WolfCMS plugin:
+
+* download the plugin (you may have to rename folder to "truncate")
+* unpack it under <code>wolf/plugins/</code> directory
+* go to Administration->Plugins and enable it
+
+h3. Usage
+
+Making excerpts on your <code>/articles</code> page:
+
+<code>
+<?php $last_articles = $this->children(array('limit'=>5, 'order'=>'page.created_on DESC')); ?>
+<?php foreach ($last_articles as $article): ?>
+<div class="entry">
+<h3><?php echo $article->link($article->title); ?></h3>
+<?php
+$myarticles = truncate($article->content(), 300, "");
+echo "$myarticles";
+?>
+</div>
+<?php endforeach; ?>
+</code>
+
+For more examples visit <a href="http://project79.net/project/trucate" target="_blank">Truncate</a> page at Project 79.
+
+h3. Licence
+
+Classic <a href="http://www.gnu.org/licenses/gpl.html">GPL</a> License
+Copyright by Dejan Andjelkovic, 2010
