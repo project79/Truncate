@@ -16,7 +16,7 @@ h3. Usage
 
 Making excerpts on your <code>/articles</code> page:
 
-<code><?php $last_articles = $this->children(array('limit'=>5, 'order'=>'page.created_on DESC')); ?>
+<pre><code><?php $last_articles = $this->children(array('limit'=>5, 'order'=>'page.created_on DESC')); ?>
 <?php foreach ($last_articles as $article): ?>
 	<div class="entry">
 		<h3><?php echo $article->link($article->title); ?></h3>
@@ -25,7 +25,7 @@ Making excerpts on your <code>/articles</code> page:
 		echo "$myarticles";
 	?>
 </div>
-<?php endforeach; ?></code>
+<?php endforeach; ?></code></pre>
 
 For more examples visit <a href="http://project79.net/project/trucate" target="_blank">Truncate</a> page at Project 79.
 
