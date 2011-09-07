@@ -1,8 +1,8 @@
 h3. About
 
 This plugin allows you to make automated excerpts by entering number of characters.
-Current version: 0.0.1
-Tested with 0.6.0 and 0.7.0RC.
+Current version: 0.0.2
+Tested with 0.6.0 and 0.7.5.
 
 h3. Installation
 
@@ -21,13 +21,23 @@ Making excerpts on your <code>/articles</code> page:
 	<div class="entry">
 		<h3><?php echo $article->link($article->title); ?></h3>
 	<?php
-		$myarticles = truncate($article->content(), 300, "");
+		$myarticles = truncate($article->content(), 300, "&hellip;");
 		echo "$myarticles";
 	?>
 </div>
 <?php endforeach; ?></code></pre>
 
 For more examples visit <a href="http://project79.net/project/trucate" target="_blank">Truncate</a> page at Project 79.
+
+h3. Changelog
+
+*0.0.2*
+
+* fixed bug with Strict Standards (thanks to Tina)
+
+*0.0.1*
+
+* initial release
 
 h3. Licence
 
