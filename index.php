@@ -3,8 +3,9 @@
 /**
  * Uncomment this for use with Wolf 0.7.0 and above
  * Security measure for Wolf 0.7.0
- * if (!defined('IN_CMS')) { exit(); }
  */
+  if (!defined('IN_CMS')) { exit(); }
+ 
 
 
 /**
@@ -14,17 +15,17 @@
  * @subpackage truncate
  *
  * @author Dejan Andjelkovic <dejan79@gmail.com>
- * @version 0.0.1
+ * @version 0.0.2
  * @since Wolf version 0.6.0
  * @license http://www.gnu.org/licenses/gpl.html GPL License
- * @copyright Dejan Andjelkovic, 2010+
+ * @copyright Dejan Andjelkovic, 2011+
  */
 
 Plugin::setInfos(array(
     'id'          => 'truncate',
     'title'       => __('Truncate'),
     'description' => __('Automated excerpts'),
-    'version'     => '0.0.1',
+    'version'     => '0.0.2',
     'license'     => 'GPL',
     'author'      => 'Dejan Andjelkovic',
     'website'     => 'http://project79.net/',
@@ -63,7 +64,9 @@ function truncate($text, $length, $suffix = '&hellip;', $isHTML = true){
 		$output2 = (count($tags = array_reverse($tags)) ? '</' . implode('></', $tags) . '>' : '');
 
 		// Find last space or HTML tag (solving problem with last space in HTML tag eg. <span class="new">)
-		$pos = (int)end(end(preg_split('/<.*>| /', $output, -1, PREG_SPLIT_OFFSET_CAPTURE)));
+		$postemp = preg_split('/<.*>| /', $output, -1, PREG_SPLIT_OFFSET_CAPTURE);
+		$postemp2 = end($postemp);
+		$pos = (int)end($postemp2);
 		// Append closing tags to output
 		$output.=$output2;
 
