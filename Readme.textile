@@ -27,7 +27,7 @@ Making excerpts on your <code>/articles</code> page:
 </div>
 <?php endforeach; ?></code></pre>
 
-For more examples visit <a href="http://project79.net/project/trucate" target="_blank">Truncate</a> page at Project 79.
+For more examples visit <a href="http://project79.net/project/truncate" target="_blank">Truncate</a> page at Project 79.
 
 h3. Changelog
 
